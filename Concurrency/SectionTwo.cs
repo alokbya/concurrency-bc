@@ -6,7 +6,7 @@ namespace Concurrency.SectionTwo
     /// 
     /// This class is not thread safe because the balance can be modified by multiple threads at the same time. 
     /// </summary>
-    public class UnsafeBankAccount : IBankAccount
+    internal class UnsafeBankAccount : IBankAccount
     {
         public int Balance { get; set; }
 
@@ -21,7 +21,7 @@ namespace Concurrency.SectionTwo
         }
     }
 
-    public class SafeBankAccount : IBankAccount
+    internal class SafeBankAccount : IBankAccount
     {
         public object padlock = new object();
         public int Balance { get; set; }
@@ -45,16 +45,16 @@ namespace Concurrency.SectionTwo
         }
     }
 
-    public interface IBankAccount
+    internal interface IBankAccount
     {
         int Balance { get; set; }
         void Deposit(int amount);
         void Withdraw(int amount);
     }
 
-    public class Exchange
+    internal class Exchange
     {
-        public static void Run(IBankAccount ba)
+        internal static void Transact(IBankAccount ba)
         {
             if (ba == null)
             {
@@ -80,6 +80,19 @@ namespace Concurrency.SectionTwo
                 Task.WaitAll(tasks.ToArray());
                 Console.WriteLine($"Final balance is {ba.Balance}");
             }
+        }
+
+        internal static void Run()
+        {
+            var unsafeBank = new UnsafeBankAccount();
+            Console.WriteLine("Unsafe bank account");
+            Transact(unsafeBank);
+
+            Console.WriteLine();
+
+            var safeBank = new SafeBankAccount();
+            Console.WriteLine("Safe bank account");
+            Transact(safeBank);
         }
     }
 }
