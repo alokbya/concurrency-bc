@@ -45,6 +45,25 @@ namespace Concurrency.SectionTwo
         }
     }
 
+    /// <summary>
+    /// The Interlocked class provides atomic operations for variables that are shared by multiple threads. It changes things atomically for us.
+    /// </summary>
+    internal class InterlockedBankAccount : IBankAccount
+    {
+        private int _balance;
+        public int Balance { get => _balance; set => _balance = value; }
+
+        public void Deposit(int amount)
+        {
+            Interlocked.Add(ref _balance, amount);
+        }
+
+        public void Withdraw(int amount)
+        {
+            Interlocked.Add(ref _balance, -amount); // subtracting is the same as adding a negative number
+        }
+    }
+
     internal interface IBankAccount
     {
         int Balance { get; set; }
@@ -78,8 +97,8 @@ namespace Concurrency.SectionTwo
                     }
                 }));
                 Task.WaitAll(tasks.ToArray());
-                Console.WriteLine($"Final balance is {ba.Balance}");
             }
+            Console.WriteLine($"Final balance is {ba.Balance}");
         }
 
         internal static void Run()
@@ -93,6 +112,12 @@ namespace Concurrency.SectionTwo
             var safeBank = new SafeBankAccount();
             Console.WriteLine("Safe bank account");
             Transact(safeBank);
+
+            Console.WriteLine();
+
+            var interlockedBank = new InterlockedBankAccount();
+            Console.WriteLine("Interlocked bank account");
+            Transact(interlockedBank);
         }
     }
 }
