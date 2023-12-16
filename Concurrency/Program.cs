@@ -5,9 +5,12 @@
 // Concurrency.SectionOne.BasicTasks.WaitingForTimeToPass();
 
 using Concurrency.SectionTwo;
+var unsafeBank = new UnsafeBankAccount();
+Console.WriteLine("Unsafe bank account");
+Exchange.Run(unsafeBank);
 
-Exchange.NotThreadSafe();
+Console.WriteLine();
 
-
-
-
+var safeBank = new SafeBankAccount();
+Console.WriteLine("Safe bank account");
+Exchange.Run(safeBank);
