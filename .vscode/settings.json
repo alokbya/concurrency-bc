@@ -1,0 +1,8 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#083605",
+        "titleBar.activeBackground": "#0C4B08",
+        "titleBar.activeForeground": "#F3FEF2"
+    },
+    "dotnet.defaultSolution": "Concurrency.sln"
+}

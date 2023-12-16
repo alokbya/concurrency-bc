@@ -1,0 +1,15 @@
+/Users/ahief/Playground/Concurrency/bin/Debug/net7.0/Concurrency
+/Users/ahief/Playground/Concurrency/bin/Debug/net7.0/Concurrency.deps.json
+/Users/ahief/Playground/Concurrency/bin/Debug/net7.0/Concurrency.runtimeconfig.json
+/Users/ahief/Playground/Concurrency/bin/Debug/net7.0/Concurrency.dll
+/Users/ahief/Playground/Concurrency/bin/Debug/net7.0/Concurrency.pdb
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.csproj.AssemblyReference.cache
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.AssemblyInfoInputs.cache
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.AssemblyInfo.cs
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.csproj.CoreCompileInputs.cache
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.dll
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/refint/Concurrency.dll
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.pdb
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/Concurrency.genruntimeconfig.cache
+/Users/ahief/Playground/Concurrency/obj/Debug/net7.0/ref/Concurrency.dll
